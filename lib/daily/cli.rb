@@ -16,8 +16,15 @@ class Daily::CLI
   end
 
   def menu
-    puts "Enter the number of the deal you'd like more info on:"
-    TEST
+    puts "Enter the number of the deal you'd like more info on or type exit:"
+    while input != "exit"
+      case input
+      when "1"
+        puts "More info on Deal 1..."
+      when "2"
+        puts "More info on Deal 2..."
+      end
+    end
   end
 
 end
