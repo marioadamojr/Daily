@@ -4,6 +4,7 @@ class Daily::CLI
   def call
     list_deals
     menu
+    goodbye
   end
 
   def list_deals
@@ -17,7 +18,9 @@ class Daily::CLI
 
   def menu
     puts "Enter the number of the deal you'd like more info on or type exit:"
+    input = nil
     while input != "exit"
+      input = gets.strip.downcase
       case input
       when "1"
         puts "More info on Deal 1..."
@@ -25,6 +28,10 @@ class Daily::CLI
         puts "More info on Deal 2..."
       end
     end
+  end
+
+  def goodbye
+    puts "See you tomorrow for more deals."
   end
 
 end
