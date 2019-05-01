@@ -17,3 +17,10 @@ The goal is to show a list of projects
 2. Product 2
 
 Which do you want to learn more about?
+
+What is a deal?
+
+A deal has a name
+A deal has a price
+A deal has a IRL
+A deal has an availability 

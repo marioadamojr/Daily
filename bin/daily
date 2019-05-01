@@ -5,4 +5,5 @@
 # ./bin/daily to run
 
 require './lib/daily'
+
 Daily::CLI.new.call
