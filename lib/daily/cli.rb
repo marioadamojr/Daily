@@ -17,6 +17,7 @@ class Daily::CLI
 
   def menu
     puts "Enter the number of the deal you'd like more info on:"
+    TEST
   end
 
 end
