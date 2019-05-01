@@ -2,5 +2,7 @@
 # says to read this file as a ruby file
 # Don't want to put logic here, imagine you have a class in CLI
 
+# ./bin/daily to run
+
 require './lib/daily'
 Daily::CLI.new.call
