@@ -10,10 +10,9 @@ class Daily::CLI
   def list_deals
     #here doc
     puts "Today's Daily Deals:"
-    puts <<-DOC.gsub /^\s*/, ""
-      1. Product 1
-      2. Product 2
-    DOC
+
+    @deals = Daily::Deal.today
+    puts @deals
   end
 
   def menu
