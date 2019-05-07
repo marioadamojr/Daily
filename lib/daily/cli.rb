@@ -11,8 +11,8 @@ class Daily::CLI
     #here doc
     puts "Today's Daily Deals:"
     @deals = Daily::Deal.today
-    @deals.each_with_index do |deal, i|
-      puts "#{i+1}. #{deal.name}"
+    @deals.each.with_index(1) do |deal, i|
+      puts "#{i}. #{deal.name} - #{deal.price} - #{deal.availability}"
     end
   end
 
@@ -23,7 +23,8 @@ class Daily::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        puts @deals[input.to_i-1]
+        the_deal = @deals[input.to_i-1]
+        puts "#{the_deal.name} - #{the_deal.price} - #{the_deal.availability}"
       elsif input == "list"
         list_deals
       else

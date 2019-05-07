@@ -38,4 +38,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "pry" #added this to add pry
+
+  spec.add_dependency "nokogiri"  #added this to add Nokogiri to the project
 end
