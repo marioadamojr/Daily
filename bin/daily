@@ -4,6 +4,7 @@
 
 # ./bin/daily to run
 
-require './lib/daily'
+require "bundler/setup"
+require "daily"
 
 Daily::CLI.new.call

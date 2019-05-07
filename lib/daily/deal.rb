@@ -3,10 +3,10 @@ class Daily::Deal
 
   def self.today
     # I should return a bunch of instance of deals
-    puts <<-DOC.gsub /^\s*/, ""
-      1. Product 1
-      2. Product 2
-    DOC
+    # puts <<-DOC.gsub /^\s*/, ""
+    #   1. Product 1
+    #   2. Product 2
+    # DOC
     deal_1 = self.new
     deal_1.name = "Umbrella"
     deal_1.price = "$10"

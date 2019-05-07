@@ -11,6 +11,9 @@ class Daily::CLI
     #here doc
     puts "Today's Daily Deals:"
     @deals = Daily::Deal.today
+    @deals.each_with_index do |deal, i|
+      puts "#{i+1}. #{deal.name}"
+    end
   end
 
   def menu
@@ -18,12 +21,10 @@ class Daily::CLI
     while input != "exit"
       puts "Enter the number of the deal you'd like more info on or type list to see the deals again or type exit:"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "More info on Deal 1..."
-      when "2"
-        puts "More info on Deal 2..."
-      when "list"
+
+      if input.to_i > 0
+        puts @deals[input.to_i-1]
+      elsif input == "list"
         list_deals
       else
         puts "Please select a valid option, 1, 2, list, or exit"
