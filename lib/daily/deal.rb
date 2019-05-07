@@ -50,10 +50,10 @@ class Daily::Deal
     doc = Nokogiri::HTML(open("https://www.meh.com/"))
 
     deal = self.new
-    deal.name = doc.search("h2.main-title").text
-    deal.price = doc.search("#todays-deal span.price.min").text
+    deal.name = doc.search("section.features h2").text.strip
+    deal.price = doc.search("button.buy-button").text.strip.gsub("Buy it.", "").strip
     deal.availability = true #dummy data, hard to set up when available
-    deal.url = "https://www.meh.com"
+    deal.url = "https://meh.com"
     deal
   end
 
