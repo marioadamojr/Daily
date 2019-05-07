@@ -10,9 +10,7 @@ class Daily::CLI
   def list_deals
     #here doc
     puts "Today's Daily Deals:"
-
     @deals = Daily::Deal.today
-    puts @deals
   end
 
   def menu
