@@ -32,6 +32,7 @@ class Daily::Deal
     # deal_2.availability = true
     # deal_2.url = "https://www.woot.com/offers/apple-13-intel-i5-macbook-pro-2018-2020"
 
+    # deals = [deal_1, deal_2]
     deals
   end
 
@@ -51,7 +52,7 @@ class Daily::Deal
 
     deal = self.new
     deal.name = doc.search("section.features h2").text.strip
-    deal.price = doc.search("button.buy-button").text.strip.gsub("Buy it.", "").strip
+    deal.price = doc.search("button.buy-button").text.strip.gsub("Buy it", "").strip
     deal.availability = true #dummy data, hard to set up when available
     deal.url = "https://meh.com"
     deal
