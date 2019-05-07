@@ -37,18 +37,24 @@ class Daily::Deal
 
   def self.scrape_woot
     doc = Nokogiri::HTML(open("https://www.woot.com/"))
-    name = doc.search("h2.main-title").text
-    price = doc.search("#todays-deal span.price.min").text
-    availability = true #dummy data, hard to set up when available
-    binding.pry
+
+    deal = self.new
+    deal.name = doc.search("h2.main-title").text
+    deal.price = doc.search("#todays-deal span.price.min").text
+    deal.availability = true #dummy data, hard to set up when available
+    deal.url = doc.search("a.wantone").first.attr("href")
+    deal
   end
 
   def self.scrape_meh
     doc = Nokogiri::HTML(open("https://www.meh.com/"))
-    name = doc.search("h2.main-title").text
-    price = doc.search("#todays-deal span.price.min").text
-    availability = true #dummy data, hard to set up when available
-    binding.pry
+
+    deal = self.new
+    deal.name = doc.search("h2.main-title").text
+    deal.price = doc.search("#todays-deal span.price.min").text
+    deal.availability = true #dummy data, hard to set up when available
+    deal.url = "https://www.meh.com"
+    deal
   end
 
 end
